@@ -1,0 +1,28 @@
+{
+  "name": "Nari",
+  "short_name": "Nari",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fdfcfb",
+  "theme_color": "#d96d52",
+  "icons": [
+    {
+      "src": "https://picsum.photos/seed/nari/192/192",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "https://picsum.photos/seed/nari/512/512",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Quick Log",
+      "short_name": "Log",
+      "url": "/?quick-log=true",
+      "icons": [{ "src": "https://picsum.photos/seed/nari/192/192", "sizes": "192x192" }]
+    }
+  ]
+}

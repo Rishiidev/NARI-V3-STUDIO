@@ -1,0 +1,133 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  
+  --color-brand-50: var(--color-brand-50);
+  --color-brand-100: var(--color-brand-100);
+  --color-brand-200: var(--color-brand-200);
+  --color-brand-300: var(--color-brand-300);
+  --color-brand-400: var(--color-brand-400);
+  --color-brand-500: var(--color-brand-500);
+  --color-brand-600: var(--color-brand-600);
+  --color-brand-700: var(--color-brand-700);
+  --color-brand-800: var(--color-brand-800);
+  --color-brand-900: var(--color-brand-900);
+  --color-brand-950: var(--color-brand-950);
+
+  --color-bg-warm: var(--color-bg-warm);
+  --color-surface: var(--color-surface);
+  --color-ink: var(--color-ink);
+}
+
+@layer base {
+  :root {
+    /* Default Terracotta */
+    --color-brand-50: #fdf8f6;
+    --color-brand-100: #fbece7;
+    --color-brand-200: #f7d9cf;
+    --color-brand-300: #f0bcab;
+    --color-brand-400: #e6927a;
+    --color-brand-500: #d96d52;
+    --color-brand-600: #c6533c;
+    --color-brand-700: #a54231;
+    --color-brand-800: #89392c;
+    --color-brand-900: #723328;
+    --color-brand-950: #3d1813;
+
+    --color-bg-warm: #fdfcfb;
+    --color-surface: #ffffff;
+    --color-ink: #2d2a29;
+  }
+
+  /* Dark Mode */
+  .dark {
+    --color-bg-warm: #121212;
+    --color-surface: #1e1e1e;
+    --color-ink: #fdfcfb;
+  }
+
+  .dark .bg-white {
+    background-color: var(--color-surface);
+  }
+  
+  .dark .border-brand-100 {
+    border-color: #333;
+  }
+  
+  .dark .border-brand-50 {
+    border-color: #222;
+  }
+
+  /* Themes */
+  .theme-sage {
+    --color-brand-50: #f4f7f4;
+    --color-brand-100: #e4efe5;
+    --color-brand-200: #c9dfcb;
+    --color-brand-300: #a2c6a6;
+    --color-brand-400: #76a67c;
+    --color-brand-500: #548a5b;
+    --color-brand-600: #406e46;
+    --color-brand-700: #35583a;
+    --color-brand-800: #2d4631;
+    --color-brand-900: #253a29;
+    --color-brand-950: #121f15;
+  }
+
+  .theme-lavender {
+    --color-brand-50: #f8f6fb;
+    --color-brand-100: #eeeaf6;
+    --color-brand-200: #dad1eb;
+    --color-brand-300: #bdabdb;
+    --color-brand-400: #9e80c8;
+    --color-brand-500: #8359b3;
+    --color-brand-600: #6d429a;
+    --color-brand-700: #5a357e;
+    --color-brand-800: #4c2d68;
+    --color-brand-900: #402755;
+    --color-brand-950: #28143a;
+  }
+
+  .theme-ocean {
+    --color-brand-50: #f0f9ff;
+    --color-brand-100: #e0f2fe;
+    --color-brand-200: #bae6fd;
+    --color-brand-300: #7dd3fc;
+    --color-brand-400: #38bdf8;
+    --color-brand-500: #0ea5e9;
+    --color-brand-600: #0284c7;
+    --color-brand-700: #0369a1;
+    --color-brand-800: #075985;
+    --color-brand-900: #0c4a6e;
+    --color-brand-950: #082f49;
+  }
+
+  body {
+    @apply bg-bg-warm text-ink font-sans selection:bg-brand-200 transition-colors duration-300;
+    -webkit-tap-highlight-color: transparent;
+    overscroll-behavior-y: contain;
+  }
+
+  h1, h2, h3 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .safe-bottom {
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  
+  .glass {
+    @apply bg-white/70 backdrop-blur-md border border-white/20;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 text-white px-6 py-3 rounded-full font-medium shadow-lg shadow-brand-500/20 active:scale-95 transition-transform;
+  }
+
+  .btn-secondary {
+    @apply bg-brand-100 text-brand-700 px-6 py-3 rounded-full font-medium active:scale-95 transition-transform;
+  }
+}
